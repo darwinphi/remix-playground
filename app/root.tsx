@@ -1,4 +1,4 @@
-import { LiveReload, Meta } from "remix";
+import { LiveReload, Meta, Outlet } from "remix";
 
 export default function App() {
   return (
@@ -8,7 +8,8 @@ export default function App() {
         <title>App</title>
       </head>
       <body>
-        <h1>Hello World</h1>
+        {/* Get the routes */}
+        <Outlet />
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
