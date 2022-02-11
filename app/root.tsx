@@ -1,4 +1,19 @@
-import { LiveReload, Meta, Outlet } from "remix";
+import { LiveReload, Meta, Outlet, Links, LinksFunction } from "remix";
+import globalCSS from "./styles/global.css";
+import normalizeCSS from "./styles/normalize.css";
+
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: "stylesheet",
+      href: globalCSS,
+    },
+    {
+      rel: "stylesheet",
+      href: normalizeCSS,
+    },
+  ];
+};
 
 export default function App() {
   return (
@@ -6,6 +21,7 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <title>App</title>
+        <Links />
       </head>
       <body>
         {/* Get the routes */}

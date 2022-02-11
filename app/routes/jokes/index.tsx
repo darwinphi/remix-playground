@@ -1,10 +1,15 @@
+import { Link } from "remix";
+
 export default function Jokes() {
   return (
     <div>
-      <h2>
-        Hey girl are you a school? Because I want to shoot some kids up inside
-        of you.
-      </h2>
+      <Link to="/jokes" title="Remix">
+        <h1>Jokes</h1>
+      </Link>
+
+      <Link to="/jokes/new">
+        <button>Add joke</button>
+      </Link>
     </div>
   );
 }

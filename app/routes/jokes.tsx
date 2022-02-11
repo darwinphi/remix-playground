@@ -1,10 +1,28 @@
-import { Outlet } from "remix";
+import { Outlet, LinksFunction, Links, Link } from "remix";
+
+import globalCSS from "../styles/global.css";
+import normalizeCSS from "../styles/normalize.css";
+
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: "stylesheet",
+      href: globalCSS,
+    },
+    {
+      rel: "stylesheet",
+      href: normalizeCSS,
+    },
+  ];
+};
 
 export default function Jokes() {
   return (
     <div>
-      <h1>Jokes</h1>
-      <Outlet />
+      <main>
+        
+        <Outlet />
+      </main>
     </div>
   );
 }
